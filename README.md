@@ -1,81 +1,92 @@
 # Momentum-Based Multi-Asset Strategy
 
-##  Overview
+## 📌 Overview
 
-This project implements a quantitative trading strategy based on momentum and multi-asset portfolio allocation.
-The strategy dynamically allocates capital among different asset classes to capture market trends while maintaining diversification.
+This project implements a quantitative trading strategy based on momentum and multi-asset portfolio allocation. The strategy dynamically allocates capital across different asset classes to capture medium-term trends while maintaining diversification.
 
 ---
 
-##  Strategy Logic
+## 🧠 Strategy Logic
 
 * **Asset Universe**: Non-ferrous metals, gold, silver, and healthcare ETFs
-* **Factor**: 20-day momentum
-* **Selection Rule**: Select top-performing assets based on recent returns
+* **Core Factor**: 20-day momentum (return-based ranking)
+* **Selection Rule**: Allocate capital to top-performing assets
 * **Rebalancing Frequency**: Monthly
-* **Risk Control**: Shift to gold when all assets exhibit negative momentum
+* **Risk Control**: Shift to defensive assets (e.g., gold) when all assets show weak momentum
 
 ---
 
-##  Implementation
+## ⚙️ Implementation
 
 * **Platform**: JoinQuant
 * **Language**: Python
-* **Core Components**:
+* **Key Components**:
 
-  * Historical price data retrieval
-  * Momentum calculation
+  * Historical data retrieval
+  * Momentum signal calculation
   * Portfolio rebalancing
 
 ---
 
-##  Backtest Results
+## 📊 Backtest Results
 
-###  Equity Curve
+### 📈 Equity Curve & Benchmark Comparison
 
-![Equity Curve](equity_curve.png)
+![Equity Curve](result1.png)
 
-###  Performance Metrics
-
-![Performance Metrics](metrics.png)
+The strategy shows strong cumulative returns and consistently outperforms the benchmark (CSI 300), especially during trending market periods.
 
 ---
 
-##  Performance Summary
+### 📊 Daily Profit & Trading Activity
+
+![Performance Metrics](result2.png)
+
+The profit distribution indicates:
+
+* Frequent small gains
+* Occasional larger drawdowns
+* Active rebalancing behavior over time
+
+---
+
+## 📉 Performance Summary
 
 * **Annual Return**: 98.25%
+* **Excess Return**: 70.15%
+* **Sharpe Ratio**: 2.706
 * **Max Drawdown**: 31.83%
-* **Sharpe Ratio**: 2.70
+* **Win Rate**: 81.8%
 
-The strategy significantly outperforms the benchmark. However, it also exhibits relatively high volatility and drawdown, indicating the need for improved risk management.
-
----
-
-##  Limitations
-
-* High exposure to cyclical assets (e.g., non-ferrous metals)
-* Limited diversification due to asset correlation
-* Simple risk control mechanism
+The strategy achieves high returns and strong risk-adjusted performance, but exhibits noticeable drawdowns during market reversals.
 
 ---
 
-##  Future Improvements
+## ⚠️ Limitations
 
-* Introduce correlation-based portfolio construction
-* Apply risk parity or volatility targeting
-* Improve drawdown control
-* Test robustness across different market conditions
+* High concentration in cyclical assets (e.g., metals)
+* Drawdown risk during trend reversals
+* Limited diversification and correlation control
 
 ---
 
-##  Project Structure
+## 🚀 Future Improvements
+
+* Introduce correlation-based portfolio optimization (e.g., risk parity)
+* Add volatility control mechanisms
+* Improve drawdown management
+* Test robustness across different market regimes
+
+---
+
+## 📁 Project Structure
 
 * `strategy.py`: trading strategy implementation
-* `result1.png`: cumulative return curve
-* `result2.png`: backtest performance metrics
+* `result1.png`: equity curve and benchmark comparison
+* `result2.png`: daily profit and trading activity
 
 ---
 
-##  Notes
+## 📬 Notes
 
-This project is a preliminary exploration of quantitative investment strategies, focusing on momentum-based asset allocation. Further improvements are needed to enhance robustness and real-world applicability.
+This project serves as an exploratory study of momentum-based asset allocation strategies. Future work will focus on improving robustness, risk control, and real-world applicability.
